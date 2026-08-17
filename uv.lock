@@ -6,12 +6,19 @@ requires-python = ">=3.14"
 members = [
     "animesh-ai-projects",
     "day1",
+    "day2",
 ]
 
 [[package]]
 name = "animesh-ai-projects"
 version = "0.1.0"
 source = { virtual = "." }
+dependencies = [
+    { name = "groq" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "groq", specifier = ">=1.6.0" }]
 
 [[package]]
 name = "annotated-types"
@@ -47,6 +54,21 @@ wheels = [
 name = "day1"
 version = "0.1.0"
 source = { virtual = "week1/day1" }
+dependencies = [
+    { name = "groq" },
+    { name = "python-dotenv" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "groq", specifier = ">=1.6.0" },
+    { name = "python-dotenv", specifier = ">=1.2.2" },
+]
+
+[[package]]
+name = "day2"
+version = "0.1.0"
+source = { virtual = "week1/day2" }
 dependencies = [
     { name = "groq" },
     { name = "python-dotenv" },
